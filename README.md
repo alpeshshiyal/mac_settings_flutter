@@ -38,10 +38,10 @@ This package uses Apple Shortcuts to interface with macOS system settings.
 
 **🔗 Download the required Shortcuts:**
 
-- [Toggle Wi-Fi Shortcut](assets/toggle_wifi.shortcut)
-- [Toggle Bluetooth Shortcut](assets/toggle_bluetooth.shortcut)
-- [AirDrop Everyone Shortcut](assets/airdrop_everyone.shortcut)
-- [Off AirDrop Shortcut](assets/airdrop_off.shortcut)
+- [Toggle Wi-Fi Shortcut](assets/shortcuts/toggle_wifi.shortcut)
+- [Toggle Bluetooth Shortcut](assets/shortcuts/toggle_bluetooth.shortcut)
+- [AirDrop Everyone Shortcut](assets/shortcuts/airdrop_everyone.shortcut)
+- [Off AirDrop Shortcut](assets/shortcuts/airdrop_off.shortcut)
 
 > Once installed, these shortcuts allow the Flutter app to trigger macOS-level changes securely and reliably.
 
