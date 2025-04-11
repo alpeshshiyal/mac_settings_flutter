@@ -3,7 +3,6 @@ import 'package:example/ui/setup_ip_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() {
@@ -44,8 +43,8 @@ class MyApp extends StatelessWidget {
         // home: ControlPage(),
         initialRoute: SetupIpScreen.routeName,
         routes: {
-          SetupIpScreen.routeName:(context)=>SetupIpScreen(),
-          ControlMacPage.routeName:(context)=>ControlMacPage(),
+          SetupIpScreen.routeName: (context) => const SetupIpScreen(),
+          ControlMacPage.routeName: (context) => const ControlMacPage(),
         },
       ),
     );

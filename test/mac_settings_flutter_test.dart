@@ -7,6 +7,12 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   test('connect to mac test case', () async {
     final macSettingFlutter = MacSettingFlutter();
-    expect(await macSettingFlutter.connectMac(ip: "192.11.1.1",userName: "test",macPassword: "123",),false);
+    expect(
+        await macSettingFlutter.connectMac(
+          ip: "192.11.1.1",
+          userName: "test",
+          macPassword: "123",
+        ),
+        false);
   });
 }

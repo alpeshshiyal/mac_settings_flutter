@@ -8,8 +8,8 @@ Future<bool?> showWifiDisableConfirmationDialog(BuildContext context) async {
       icon: const Icon(Icons.wifi),
       content: const Text(
         "You are currently communicating through Wi-Fi. "
-            "If you disable Wi-Fi, the connection will be refused and "
-            "you won’t be able to access Mac settings.",
+        "If you disable Wi-Fi, the connection will be refused and "
+        "you won’t be able to access Mac settings.",
       ),
       actions: [
         TextButton(

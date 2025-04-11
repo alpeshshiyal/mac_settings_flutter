@@ -29,52 +29,66 @@ class TextFieldInput extends StatelessWidget {
     required this.hintText,
     this.textInputType = TextInputType.text,
     this.validator,
-    this.suffixIcon, this.labelText,
+    this.suffixIcon,
+    this.labelText,
     this.maxLines,
-    this.readOnly=false, this.onTap,
-    this.onFieldSubmitted, this.prefixIcon,
+    this.readOnly = false,
+    this.onTap,
+    this.onFieldSubmitted,
+    this.prefixIcon,
     this.labelStyle,
     this.onChanged,
     this.padding,
     this.focusNode,
     this.maxLength,
     this.inputFormatters,
-    this.noBorder=false,
-    this.autofocus=false,
+    this.noBorder = false,
+    this.autofocus = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final inputBorder = OutlineInputBorder(
-      borderSide: Divider.createBorderSide(context).copyWith(
-          width: 0.6,color:noBorder?Colors.transparent :Theme.of(context).colorScheme.primary),
-      borderRadius: BorderRadius.all(Radius.circular(8))
-    );
+        borderSide: Divider.createBorderSide(context).copyWith(
+            width: 0.6,
+            color: noBorder
+                ? Colors.transparent
+                : Theme.of(context).colorScheme.primary),
+        borderRadius: const BorderRadius.all(Radius.circular(8)));
 
     return Padding(
-      padding:padding?? const EdgeInsets.only(bottom: 20,left: 15,right: 15),
+      padding:
+          padding ?? const EdgeInsets.only(bottom: 20, left: 15, right: 15),
       child: Column(
         children: [
           Visibility(
-            visible: labelText!=null,
+            visible: labelText != null,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(bottom: 10),
-                  child: Text(labelText??"",
-                    style:labelStyle??Theme.of(context).textTheme.labelMedium?.copyWith(
-                      fontSize: 14,color: Colors.black,
-                      fontWeight: FontWeight.w500
-                  ),
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    labelText ?? "",
+                    style: labelStyle ??
+                        Theme.of(context).textTheme.labelMedium?.copyWith(
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500),
                   ),
                 ),
-                SizedBox(width: 5,),
-                if(validator!=null)
-                Text("*",style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: Colors.red
-                ),),
+                const SizedBox(
+                  width: 5,
+                ),
+                if (validator != null)
+                  Text(
+                    "*",
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelMedium
+                        ?.copyWith(color: Colors.red),
+                  ),
               ],
             ),
           ),
@@ -85,11 +99,11 @@ class TextFieldInput extends StatelessWidget {
             focusNode: focusNode,
             onFieldSubmitted: onFieldSubmitted,
             controller: controller,
-            maxLines: maxLines??1,
+            maxLines: maxLines ?? 1,
             onChanged: onChanged,
             maxLength: maxLength,
             inputFormatters: inputFormatters,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
             onTapOutside: (p) {
               FocusScope.of(context).requestFocus(FocusNode());
               SystemChannels.textInput.invokeMethod('TextInput.hide');
@@ -100,10 +114,10 @@ class TextFieldInput extends StatelessWidget {
                 border: inputBorder,
                 focusedBorder: inputBorder,
                 enabledBorder: inputBorder,
-                hintStyle: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  fontWeight: FontWeight.w400,
-                  color: Colors.grey
-                ),
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .labelSmall
+                    ?.copyWith(fontWeight: FontWeight.w400, color: Colors.grey),
                 fillColor: Colors.brown,
                 filled: true,
                 contentPadding: const EdgeInsets.all(8),
@@ -112,12 +126,13 @@ class TextFieldInput extends StatelessWidget {
                   child: suffixIcon,
                 ),
                 prefixIcon: Padding(
-                  padding: const EdgeInsets.only(left: 10,right: 5),
+                  padding: const EdgeInsets.only(left: 10, right: 5),
                   child: prefixIcon,
                 ),
-              prefixIconConstraints: const BoxConstraints(maxHeight: 30,minHeight: 10),
-              suffixIconConstraints: const BoxConstraints(maxHeight: 30,minHeight: 10)
-            ),
+                prefixIconConstraints:
+                    const BoxConstraints(maxHeight: 30, minHeight: 10),
+                suffixIconConstraints:
+                    const BoxConstraints(maxHeight: 30, minHeight: 10)),
             keyboardType: textInputType,
             obscureText: isPass,
             validator: validator,
@@ -135,10 +150,10 @@ class CustomTextEditingController extends TextEditingController {
 
   CustomTextEditingController(this.map)
       : pattern = RegExp(
-      map.keys.map((key) {
-        return key;
-      }).join('|'),
-      multiLine: true);
+            map.keys.map((key) {
+              return key;
+            }).join('|'),
+            multiLine: true);
 
   @override
   set text(String newText) {
@@ -150,7 +165,8 @@ class CustomTextEditingController extends TextEditingController {
   }
 
   @override
-  TextSpan buildTextSpan({required BuildContext context, TextStyle? style, bool? withComposing}) {
+  TextSpan buildTextSpan(
+      {required BuildContext context, TextStyle? style, bool? withComposing}) {
     final List<InlineSpan> children = [];
     String? patternMatched;
     String? formatText;
@@ -159,7 +175,7 @@ class CustomTextEditingController extends TextEditingController {
       pattern,
       onMatch: (Match match) {
         myStyle = map[map.keys.firstWhere(
-              (e) {
+          (e) {
             bool ret = false;
             RegExp(e).allMatches(text).forEach((element) {
               if (element.group(0) == match[0]) {

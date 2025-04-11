@@ -1,7 +1,8 @@
 name: mac_settings_flutter
-description: "A new Flutter project."
+description: "A Flutter plugin to control macOS settings (Wi-Fi, Bluetooth, AirDrop) using Apple Shortcuts."
 version: 0.0.1
-homepage:
+homepage: https://github.com/alpeshshiyal/mac_settings_flutter
+repository: https://github.com/alpeshshiyal/mac_settings_flutter
 
 environment:
   sdk: ^3.5.2
