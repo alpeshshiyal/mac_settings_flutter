@@ -95,7 +95,7 @@ Once connected, you can toggle Wi-Fi, Bluetooth, and AirDrop using the MacSettin
 ```dart
 import 'package:mac_settings_flutter/mac_settings_flutter.dart';
 
-final controller = MacSettingsController();
+final controller = MacSettingsFlutter();
 
 // Toggle Wi-Fi
 await controller.toggleWiFi();
