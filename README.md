@@ -23,8 +23,8 @@
 <h3>App Screenshots</h3>
 
 <p float="center">
-  <img src="assets/screenshots/setup.png" width="40%" />
-  <img src="assets/screenshots/usage.png" width="40%" />
+  <img src="https://github.com/alpeshshiyal/mac_settings_flutter/tree/main/assets/screenshots/setup.png" width="40%" />
+  <img src="https://github.com/alpeshshiyal/mac_settings_flutter/tree/main/assets/screenshots/usage.png" width="40%" />
 </p>
 
 ## 🚀 Getting Started
