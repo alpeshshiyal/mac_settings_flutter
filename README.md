@@ -107,3 +107,6 @@ await controller.toggleBluetooth();
 await controller.toggleAirDrop();
 
 ```
+## Authors
+
+- [@alpeshshiyal](https://github.com/alpeshshiyal)
